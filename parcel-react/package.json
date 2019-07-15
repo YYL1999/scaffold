@@ -1,0 +1,36 @@
+{
+  "name": "jsj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html -p 8089",
+    "build": "parcel build index.js",
+    "docz：dev": "docz dev",
+    "docz：build": "docz build"
+  },
+  "keywords": [],
+  "author": "leipengfei",
+  "license": "ISC",
+  "dependencies": {
+    "antd": "^3.11.6",
+    "babel-plugin-import": "^1.11.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-react": "^6.24.1",
+    "parcel-bundler": "^1.11.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-router": "^4.3.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "docz": "^0.13.7",
+    "grid": "^3.3.7",
+    "less": "^3.9.0",
+    "postcss-modules": "^1.4.1"
+  }
+}

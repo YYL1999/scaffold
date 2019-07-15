@@ -1,0 +1,74 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "PORT=8080 roadhog dev",
+    "build": "roadhog build",
+    "lint": "eslint --ext .js src test",
+    "precommit": "lint-staged",
+    "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint --ext .js"
+  },
+  "lint-staged": {
+    "linters": {
+      "static/js/**/*.js": [
+        "./node_modules/.bin/eslint --fix",
+        "git add"
+      ]
+    },
+    "src/**/*.{js,jsx}": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.{js,jsx}": "npm run lint-staged:js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit",
+      "pre-push": "echo push"
+    }
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "rule-empty-line-before": null,
+      "string-quotes": "single",
+      "property-no-unknown": [
+        true,
+        {
+          "ignoreProperties": [
+            "composes"
+          ]
+        }
+      ],
+      "selector-pseudo-class-no-unknown": [
+        true,
+        {
+          "ignorePseudoClasses": [
+            "global"
+          ]
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "antd": "^3.16.2",
+    "babel-plugin-import": "^1.11.0",
+    "dva": "^2.4.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel-plugin-dva-hmr": "^0.3.2",
+    "dva-loading": "^3.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-umi": "^0.1.1",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "husky": "^0.12.0",
+    "lint-staged": "^8.1.5",
+    "redbox-react": "^1.4.3",
+    "roadhog": "^2.5.0-beta.4"
+  }
+}
